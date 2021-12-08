@@ -1,0 +1,26 @@
+
+logging:
+   file:
+      path: C:\development software\2020-workspace 
+   level:
+      web: TRACE 
+      com.thasan: TRACE
+spring: 
+   main:
+    banner-mode: off
+   mvc:
+      view:
+         prefix: WEB-INF/views/
+         suffix: .jsp
+   application:  
+      name: basic   
+   devtools:
+      add-properties: true
+      restart:
+         log-condition-evaluation-delta: false
+   servlet:
+      multipart:
+         max-file-size: 256MB
+         max-request-size: 256MB
+         enabled: true
+               

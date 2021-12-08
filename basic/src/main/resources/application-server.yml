@@ -1,0 +1,50 @@
+
+logging:
+   file:
+      path: C:\development software\
+      name: C:\development software\server.log
+   level:
+      web: TRACE 
+      com.thasan: TRACE
+spring: 
+   main:
+    banner-mode: off
+   mvc:
+      view:
+         prefix: /WEB-INF/views/
+         suffix: .jsp
+   application:  
+      name: davos  
+   jpa:
+      open-in-view: false 
+      properties: 
+         hibernate.default_schema: public
+         org.hibernate.envers.audit_table_suffix: _audited
+         org.hibernate.envers.revision_field_name: revision
+         org.hibernate.envers.revision_type_field_name: revision_type
+         org.hibernate.envers.default_schema: auditing
+      hibernate:
+         ddl-auto: update 
+         show-sql: true         
+   data:
+      mongodb:
+         uri: mongodb://gobi:Pass123#d@gobi-shard-00-00-wmwnp.mongodb.net:27017,gobi-shard-00-01-wmwnp.mongodb.net:27017,gobi-shard-00-02-wmwnp.mongodb.net:27017/davos?ssl=true&replicaSet=gobi-shard-0&authSource=admin&retryWrites=true&w=majority
+         entity-packages: com.davos.mongo.model
+         repository-packages: com.davos.mongo.repository
+   datasource:
+      database: mysql
+      platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      url: jdbc:mysql://localhost:3306/davos?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+      username: root
+      password: Pass123#d
+      driver-class-name: com.mysql.cj.jdbc.Driver   
+   devtools:
+      add-properties: true
+      restart:
+         log-condition-evaluation-delta: false
+   servlet:
+      multipart:
+         max-file-size: 256MB
+         max-request-size: 256MB
+         enabled: true
+         
