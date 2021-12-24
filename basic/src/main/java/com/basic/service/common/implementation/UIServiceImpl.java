@@ -8,7 +8,8 @@ import com.basic.service.common.UIService;
 public class UIServiceImpl implements UIService{
 
 	public UIServiceImpl() {
-		super(); 
+		super();  
+				
 	}
 	
 }

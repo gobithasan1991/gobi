@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Template</title>
+ <meta charset="utf-8"> 
+  <meta content="Gobithasan Basic Template" name="description">
+  <meta content="Gobithasan S" name="author"> 
+  <link href="images/icon/g-icon.ico" rel="icon" type="image/x-icon">
+<title>G</title>
 </head>
 <body>
-Welcome
+
 </body>
 </html>

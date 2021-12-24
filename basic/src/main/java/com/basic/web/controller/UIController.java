@@ -1,7 +1,4 @@
-package com.basic.controller;
-
-import java.util.Scanner;
-import java.util.TreeSet;
+package com.basic.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,10 +26,6 @@ public class UIController {
 
 	@GetMapping("/")
 	public ModelAndView index() {  	
-		
-		try (Scanner sc = new Scanner(System.in)){
-			
-		}
 		return new ModelAndView("index");
 	}
 }

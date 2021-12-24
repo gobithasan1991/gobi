@@ -4,3 +4,20 @@ server:
       context-path: /basic
       session:
         timeout: 30m
+api:
+  info:
+    title: "Gobithasan"
+    description: "This is common architecture"
+    version: "0.0.1-SNAPSHOT"
+    terms-of-service: http://swagger.io/terms/
+    contact:
+      name: Gobithasan
+      email: gobithasanhw@gmail.com
+      url: http://gobithasan.com/team
+    license:
+      name: Apache 2.0
+      url: http://www.apache.org/licenses/LICENSE-2.0.html
+  logging:
+    enabled: true
+    url-patterns: "/*"
+        

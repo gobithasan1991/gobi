@@ -1,26 +1,77 @@
-
+springdoc:
+   api-docs:
+      path: api-docs
+   swagger-ui:
+      enabled: false
+      show-extensions: false
+      show-common-extensions: false
+      operationsSorter: method
+      path: /swagger-ui-custom.html
+   use-fqn: false 
+      
+hibernate:
+   dialect: 
+      storage_engine: innodb
+      
 logging:
    file:
       path: C:\development software\2020-workspace 
    level:
-      web: TRACE 
-      com.thasan: TRACE
+      web: DEBUG 
+      com.basic: DEBUG
+      org.hibernate.SQL: DEBUG
+      org.springframework.boot.autoconfigure: ERROR
+management:
+   server:
+      port: 8082
+   endpoints:
+      web:
+         base-path: /basic
+         exposure:
+            include: health,info,env,beans,sessions,shutdown,mappings,httptrace,loggers
+   endpoint:
+      beans:
+         cache:
+            time-to-live: 25s
 spring: 
    main:
-    banner-mode: off
-   mvc:
+       banner-mode: off 
+   mvc: 
       view:
          prefix: WEB-INF/views/
          suffix: .jsp
+   jpa:
+      show-sql: true 
+      open-in-view: false 
+      generate-ddl: true
+      hibernate:
+         ddl-auto: update
+      properties: 
+         hibernate:
+            dialect: org.hibernate.dialect.MySQL55Dialect
+            integration:
+               envers:
+                  enabled: false
+         hibernate.default_schema: public
+         org.hibernate.envers.audit_table_suffix: _audited
+         org.hibernate.envers.revision_field_name: revision
+         org.hibernate.envers.revision_type_field_name: revision_type
+         org.hibernate.envers.default_schema: auditing
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      database: mysql
+      platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      url: jdbc:mysql://localhost:3306/basic?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+      username: root
+      password: Pass123#d
    application:  
       name: basic   
    devtools:
-      add-properties: true
+      add-properties: false
       restart:
          log-condition-evaluation-delta: false
    servlet:
       multipart:
          max-file-size: 256MB
          max-request-size: 256MB
-         enabled: true
-      
+         enabled: true      
