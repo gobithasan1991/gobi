@@ -28,7 +28,7 @@ spring:
          show-sql: true         
    data:
       mongodb:
-         uri: mongodb://gobi:Pass123#d@gobi-shard-00-00-wmwnp.mongodb.net:27017,gobi-shard-00-01-wmwnp.mongodb.net:27017,gobi-shard-00-02-wmwnp.mongodb.net:27017/davos?ssl=true&replicaSet=gobi-shard-0&authSource=admin&retryWrites=true&w=majority
+         uri: 
          entity-packages: com.davos.mongo.model
          repository-packages: com.davos.mongo.repository
    datasource:
